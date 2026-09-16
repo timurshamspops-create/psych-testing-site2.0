@@ -1,0 +1,424 @@
+/* ============================================================
+   Design tokens
+   ============================================================ */
+:root {
+  --ink: #1e2a32;
+  --paper: #eae8e1;
+  --card: #f6f5f0;
+  --line: #c9c6ba;
+  --ochre: #b97a2b;
+  --ochre-dark: #96631f;
+  --ochre-light: #d9a463;
+  --teal: #4b7a72;
+  --teal-dark: #2f5750;
+  --muted: #6b6e66;
+
+  --font-display: "IBM Plex Serif", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+
+  --content-width: 880px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+a { color: var(--ochre-dark); }
+a:hover { color: var(--ink); }
+
+img, svg { max-width: 100%; }
+
+.wrap {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   Site header + folder-tab navigation
+   ============================================================ */
+.site-header {
+  padding: 40px 0 0;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 28px;
+  letter-spacing: 0.01em;
+}
+
+.site-title a { color: var(--ink); text-decoration: none; }
+
+nav.tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid var(--line);
+}
+
+nav.tabs a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--muted);
+  background: transparent;
+  border: 2px solid transparent;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  top: 2px;
+}
+
+nav.tabs a:hover {
+  color: var(--ink);
+}
+
+nav.tabs a.active {
+  color: var(--ink);
+  background: var(--card);
+  border-color: var(--line);
+  border-bottom-color: var(--card);
+}
+
+/* ============================================================
+   Main content area (visually continues the active tab)
+   ============================================================ */
+main {
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 40px 0 56px;
+  min-height: 50vh;
+}
+
+main .wrap > h1 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 500;
+  max-width: 34ch;
+  margin: 0 0 12px;
+}
+
+main .wrap > p.lede {
+  color: var(--muted);
+  max-width: 58ch;
+  margin: 0 0 36px;
+  font-size: 1.05rem;
+}
+
+/* ============================================================
+   Test index cards
+   ============================================================ */
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .test-grid { grid-template-columns: 1fr; }
+}
+
+.test-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.test-card:nth-child(5n+2) { transform: rotate(-0.3deg); }
+.test-card:nth-child(5n+3) { transform: rotate(0.3deg); }
+.test-card:nth-child(5n+4) { transform: rotate(-0.2deg); }
+
+.test-card .tag {
+  align-self: flex-start;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  color: #fff;
+  background: var(--ochre);
+}
+
+.test-card:nth-child(5n+2) .tag { background: var(--teal); }
+.test-card:nth-child(5n+3) .tag { background: var(--muted); }
+.test-card:nth-child(5n+4) .tag { background: var(--teal-dark); }
+.test-card:nth-child(5n+5) .tag { background: var(--ochre-light); color: var(--ink); }
+
+.test-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.test-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.test-card .meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 9px 18px;
+  background: var(--ochre);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.btn:hover { background: var(--ochre-dark); color: #fff; }
+
+.btn.secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.btn.secondary:hover { border-color: var(--ink); background: transparent; color: var(--ink); }
+
+/* ============================================================
+   Test-taking page
+   ============================================================ */
+.back-link {
+  display: inline-block;
+  margin-bottom: 22px;
+  font-size: 0.92rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--ink); }
+
+.scale-legend {
+  font-size: 0.82rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+.question-block {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.question-text {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.scale-row {
+  display: flex;
+  gap: 8px;
+}
+
+.scale-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.scale-btn:hover { border-color: var(--ochre); }
+
+.scale-btn.selected {
+  background: var(--ochre);
+  border-color: var(--ochre);
+  color: #fff;
+}
+
+.test-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.progress {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.btn:disabled {
+  background: var(--line);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.result-card {
+  margin-top: 8px;
+  padding: 28px 30px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  max-width: 440px;
+}
+
+.result-score {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  color: var(--ochre-dark);
+  line-height: 1;
+}
+
+.result-level {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 8px 0 16px;
+}
+
+.result-card .btn { margin: 4px 8px 0 0; }
+
+/* ============================================================
+   Results page
+   ============================================================ */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  .stat-row { grid-template-columns: 1fr; }
+}
+
+.stat-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 18px 20px;
+  background: var(--paper);
+}
+
+.stat-card .num {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  color: var(--ochre-dark);
+  line-height: 1;
+}
+
+.stat-card .label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+.chart-wrap {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 24px;
+  background: var(--paper);
+}
+
+.notice {
+  border-left: 3px solid var(--ochre);
+  padding: 10px 16px;
+  background: var(--paper);
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ============================================================
+   Contacts page
+   ============================================================ */
+.contact-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 28px 30px;
+  background: var(--paper);
+  max-width: 440px;
+}
+
+.contact-card h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.contact-card .role {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-list li {
+  display: flex;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.contact-list .k { color: var(--muted); min-width: 90px; }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+  max-width: var(--content-width);
+  margin: 24px auto 60px;
+  padding: 0 24px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   Accessibility
+   ============================================================ */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--ochre-dark);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тест — Психологическое тестирование</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="site-title"><a href="index.html">Психологическое тестирование</a></div>
+    <nav class="tabs">
+      <a href="index.html" class="active">Тесты</a>
+      <a href="results.html">Результаты</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <a href="index.html" class="back-link">← Все тесты</a>
+    <h1 id="test-title">Загрузка…</h1>
+    <p class="lede" id="test-description"></p>
+
+    <div id="test-form" style="display:none;">
+      <div class="scale-legend">1 — никогда · 2 — редко · 3 — иногда · 4 — часто · 5 — всегда</div>
+      <div id="questions"></div>
+      <div class="test-footer">
+        <span class="progress" id="progress"></span>
+        <button type="button" class="btn" id="submit-btn" disabled>Показать результат</button>
+      </div>
+    </div>
+
+    <div id="test-result" class="result-card" style="display:none;"></div>
+  </div>
+</main>
+
+<footer>Социальный проект · сбор и обработка данных психологического тестирования</footer>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/local-stats.js"></script>
+<script src="js/test.js"></script>
+</body>
+</html>

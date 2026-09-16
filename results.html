@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Результаты — Психологическое тестирование</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="site-title"><a href="index.html">Психологическое тестирование</a></div>
+    <nav class="tabs">
+      <a href="index.html">Тесты</a>
+      <a href="results.html" class="active">Результаты</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Статистика прохождений</h1>
+    <p class="lede">Средний балл по каждому тесту и количество прохождений. Обновляется по мере поступления новых ответов.</p>
+
+    <div class="notice" id="data-notice" style="display:none;"></div>
+
+    <div class="stat-row" id="stat-row"></div>
+
+    <div class="chart-wrap">
+      <canvas id="results-chart" height="110"></canvas>
+    </div>
+  </div>
+</main>
+
+<footer>Социальный проект · сбор и обработка данных психологического тестирования</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/local-stats.js"></script>
+<script src="js/results.js"></script>
+</body>
+</html>
