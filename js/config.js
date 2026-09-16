@@ -2,4 +2,4 @@
 // Пока пусто — тесты работают полностью локально (результат считается в
 // браузере, статистика собирается только в этом браузере через localStorage).
 // Пример после разворачивания: "https://script.google.com/macros/s/AKfycb.../exec"
-var APPS_SCRIPT_URL = "";
+var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzQoSImSPoD4iu2eEu4L5yKUqyYyOVc9jxNEtciv9aZ0nMMlAJWn4yiUAhHCmEVxYsO/exec";
